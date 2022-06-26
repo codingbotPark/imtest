@@ -84,7 +84,7 @@ function shuffle() {
 
 /* GET home page. */
 router.get("/", function (req, res) {
-  const data = shuffle();
+  const data = shuffle().slice(0,10);
   res.json(data);
 });
 
