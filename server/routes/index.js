@@ -5,6 +5,11 @@ const app = require("../app");
 
 var router = express.Router();
 
+const cors = require('cors');
+const corsOptions = {
+  origin : 'url'
+}
+
 
 // answer은 1이 오른쪽
 
@@ -81,6 +86,9 @@ function shuffle() {
   return arr;
 }
 
+
+// cors오류를 없애기 위해 미들웨어를 사용
+router.use(cors(corsOptions));
 
 /* GET home page. */
 router.get("/", function (req, res) {
